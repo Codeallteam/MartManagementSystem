@@ -127,7 +127,7 @@ public class managerFirstFrame extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				try{
 					Class.forName(mainMethodClass.JDBC_DRIVER);
-					conn = DriverManager.getConnection(mainMethodClass.DB_URL,"root","root");
+					conn = DriverManager.getConnection(mainMethodClass.DB_URL,"root","");
 					pstmt = conn.prepareStatement("SELECT * FROM manager_sign_in WHERE manager_username = ? AND manager_password = ?");
 					pstmt.setString(1, managerUserName.getText().trim());
 					pstmt.setString(2, managerPassword.getText().trim());

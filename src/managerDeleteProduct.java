@@ -84,7 +84,7 @@ public class managerDeleteProduct extends JFrame {
 				String productId = textField.getText().trim();
 				try{
 					Class.forName(mainMethodClass.JDBC_DRIVER);
-					conn = DriverManager.getConnection(mainMethodClass.DB_URL, "root", "root");
+					conn = DriverManager.getConnection(mainMethodClass.DB_URL, "root", "");
 					pstmt = conn.prepareStatement("DELETE FROM manager_add_product WHERE product_id = ?");
 					pstmt.setString(1, productId);
 					int i = pstmt.executeUpdate();

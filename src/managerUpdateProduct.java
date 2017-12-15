@@ -58,7 +58,7 @@ public class managerUpdateProduct extends JFrame {
 		      Class.forName(mainMethodClass.JDBC_DRIVER);
 
 		      //STEP 3: Open a connection
-		      conn = DriverManager.getConnection(mainMethodClass.DB_URL, "root", "root");
+		      conn = DriverManager.getConnection(mainMethodClass.DB_URL, "root", "");
 		      
 		      //STEP 4: Execute a query
 		      pstmt = conn.prepareStatement("SELECT product_name, product_id, rate, quantity, weight, brand, category FROM manager_add_product WHERE product_id = ?");
@@ -170,7 +170,7 @@ public class managerUpdateProduct extends JFrame {
 				String updateCategory = textField_6.getText().trim();
 				try{
 					Class.forName(mainMethodClass.JDBC_DRIVER);
-					conn = DriverManager.getConnection(mainMethodClass.DB_URL,"root","root");
+					conn = DriverManager.getConnection(mainMethodClass.DB_URL,"root","");
 					pstmt = conn.prepareStatement("UPDATE manager_add_product SET product_name = ?,product_id = ?,rate = ? ,quantity = ?, weight = ?,brand = ?,category = ? WHERE product_id = ?");
 					pstmt.setString(1, updateProductName);
 					pstmt.setString(2, updateProductId);

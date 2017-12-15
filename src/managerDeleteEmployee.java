@@ -86,7 +86,7 @@ public class managerDeleteEmployee extends JFrame {
 				String employeeName = textField.getText().trim();
 				try{
 					Class.forName(mainMethodClass.JDBC_DRIVER);
-					conn = DriverManager.getConnection(mainMethodClass.DB_URL, "root", "root");
+					conn = DriverManager.getConnection(mainMethodClass.DB_URL, "root", "");
 					pstmt = conn.prepareStatement("DELETE FROM manager_add_employee WHERE email_address = ?");
 					pstmt.setString(1, employeeName);
 					int i = pstmt.executeUpdate();

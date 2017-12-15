@@ -132,7 +132,7 @@ public class managerAddProduct extends JFrame {
 				else{
 					try{
 						Class.forName(mainMethodClass.JDBC_DRIVER);
-						conn = DriverManager.getConnection(mainMethodClass.DB_URL,"root","root");
+						conn = DriverManager.getConnection(mainMethodClass.DB_URL,"root","");
 						pstmt = conn.prepareStatement("INSERT INTO manager_add_product(product_name,product_id,rate,quantity,weight,brand,category,updated_by) VALUE(?,?,?,?,?,?,?,?)");
 						pstmt.setString(1, productName);
 						pstmt.setString(2, productId);

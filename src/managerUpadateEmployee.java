@@ -54,7 +54,7 @@ public class managerUpadateEmployee extends JFrame {
 		      Class.forName(mainMethodClass.JDBC_DRIVER);
 
 		      //STEP 3: Open a connection
-		      conn = DriverManager.getConnection(mainMethodClass.DB_URL, "root", "root");
+		      conn = DriverManager.getConnection(mainMethodClass.DB_URL, "root", "");
 		      
 		      //STEP 4: Execute a query
 		      pstmt = conn.prepareStatement("SELECT first_name, last_name, email_address, password FROM manager_add_employee WHERE email_address = ?");
@@ -165,7 +165,7 @@ public class managerUpadateEmployee extends JFrame {
 				final String updatePassword = passwordField.getText().trim();
 				try{
 					Class.forName(mainMethodClass.JDBC_DRIVER);
-					conn = DriverManager.getConnection(mainMethodClass.DB_URL,"root","root");
+					conn = DriverManager.getConnection(mainMethodClass.DB_URL,"root","");
 					pstmt = conn.prepareStatement("UPDATE manager_add_employee SET first_name = ? ,last_name = ?,email_address = ? ,password = ? WHERE email_address = ?");
 					pstmt.setString(1, updateFirstName);
 					pstmt.setString(2, updateLastName);

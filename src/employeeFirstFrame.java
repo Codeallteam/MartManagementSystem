@@ -41,8 +41,6 @@ import java.sql.PreparedStatement;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
-import com.mysql.jdbc.ResultSet;
-
 
 public class employeeFirstFrame extends JFrame {
 
@@ -128,7 +126,7 @@ public class employeeFirstFrame extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				try{
 					Class.forName(mainMethodClass.JDBC_DRIVER);
-					conn = DriverManager.getConnection(mainMethodClass.DB_URL,"root","root");
+					conn = DriverManager.getConnection(mainMethodClass.DB_URL,"root","");
 					pstmt = conn.prepareStatement("SELECT * FROM manager_add_employee WHERE email_address = ? AND password = ?");
 					pstmt.setString(1, managerUserName.getText().trim());
 					pstmt.setString(2, managerPassword.getText().trim());

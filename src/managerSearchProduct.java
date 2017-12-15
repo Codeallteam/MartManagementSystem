@@ -26,7 +26,7 @@ public class managerSearchProduct extends JPanel {
         try {
         	Class.forName("com.mysql.jdbc.Driver");
             //  Connect to an Access Database
-            conexao = DriverManager.getConnection("jdbc:mysql://localhost/selecteddb", "root", "root");
+            conexao = DriverManager.getConnection("jdbc:mysql://localhost/selecteddb", "root", "");
 
             //  Read data from a table
             String sql = "select product_name, product_id, rate, quantity, brand from manager_add_product";

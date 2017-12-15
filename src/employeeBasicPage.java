@@ -18,7 +18,6 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
-import com.mysql.jdbc.ResultSet;
 
 import java.awt.Font;
 
@@ -92,7 +91,7 @@ public class employeeBasicPage extends JFrame {
 				}else{
 					try{
 						Class.forName("com.mysql.jdbc.Driver");
-						conn = DriverManager.getConnection("jdbc:mysql://localhost/selecteddb","root","root");
+						conn = DriverManager.getConnection("jdbc:mysql://localhost/selecteddb","root","");
 						pstmt = conn.prepareStatement("SELECT product_name, product_id, rate FROM manager_add_product WHERE product_id = ?");
 						pstmt.setString(1, produtId);
 						rs = pstmt.executeQuery();
@@ -133,6 +132,8 @@ public class employeeBasicPage extends JFrame {
 					lessValue = lessValue * stringGivenData;
 					setJlabelText(0 , lessValue);
 					model.removeRow(row);
+					
+					 
 				}
 			}
 		});
@@ -164,7 +165,7 @@ public class employeeBasicPage extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				try{
 					Class.forName(mainMethodClass.JDBC_DRIVER);
-					conn = DriverManager.getConnection(mainMethodClass.DB_URL,"root","root");
+					conn = DriverManager.getConnection(mainMethodClass.DB_URL,"root","");
 					pstmt = conn.prepareStatement("INSERT INTO customer_billing(customer_bill) VALUE(?)");
 					pstmt.setString(1, totalAnsString);
 					int i = pstmt.executeUpdate();

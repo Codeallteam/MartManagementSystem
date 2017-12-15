@@ -103,7 +103,7 @@ public class managerSearchEmployeeUpdate extends JFrame {
 				      Class.forName(mainMethodClass.JDBC_DRIVER);
 
 				      //STEP 3: Open a connection
-				      conn = DriverManager.getConnection(mainMethodClass.DB_URL, "root", "root");
+				      conn = DriverManager.getConnection(mainMethodClass.DB_URL, "root", "");
 				      
 				      //STEP 4: Execute a query
 

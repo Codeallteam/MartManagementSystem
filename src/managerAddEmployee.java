@@ -137,7 +137,7 @@ public class managerAddEmployee extends JFrame {
 				else{
 					try{
 						Class.forName(mainMethodClass.JDBC_DRIVER);
-						conn = DriverManager.getConnection(mainMethodClass.DB_URL , "root" , "root");
+						conn = DriverManager.getConnection(mainMethodClass.DB_URL , "root" , "");
 						pstmt = conn.prepareStatement("INSERT INTO manager_add_employee(first_name,last_name,email_address,password) VALUE(?,?,?,?)");
 						pstmt.setString(1, firstName);
 						pstmt.setString(2, lastName);
